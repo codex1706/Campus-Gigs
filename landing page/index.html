@@ -113,6 +113,34 @@
         font-size: 14px;
         margin-right: 8px;
       }
+
+      /* Fix fixed heights on mobile */
+      .why-tile-text,
+      .why-tile-image-wrapper,
+      .step-image {
+        height: auto !important;
+        min-height: 200px;
+      }
+
+      /* Prevent CTA images from blocking text */
+      .cta-left,
+      .cta-right {
+        opacity: 0.15 !important;
+      }
+
+      /* Navbar mobile styling */
+      .navbar-collapse {
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        margin: 0 12px;
+      }
     }
 
     @media (max-width: 576px) {
@@ -186,16 +214,18 @@
       font-size: 18px;
     }
 
+    .navbar-nav .nav-link,
     .nav-link {
-      color: #111827;
+      color: #111827 !important;
       font-weight: 500;
       margin: 0 16px;
       text-decoration: none;
       font-size: 15px;
     }
 
+    .navbar-nav .nav-link:hover,
     .nav-link:hover {
-      color: #3b82f6;
+      color: #3b82f6 !important;
     }
 
     .btn-outline {
@@ -715,18 +745,26 @@
 
 <body>
   <!-- Header -->
-  <nav class="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center w-100">
-        <a href="#" class="navbar-brand">
-          <img src="assets/logo.png" alt="Campus Gigs" style="width: 40px; height: 40px; object-fit: contain;">
-        </a>
-        <div class="d-flex align-items-center">
+      <a href="#" class="navbar-brand">
+        <img src="assets/logo.png" alt="Campus Gigs" style="width: 40px; height: 40px; object-fit: contain;">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="navbar-nav ms-auto align-items-lg-center mt-3 mt-lg-0">
           <a href="#" class="nav-link">How It Works</a>
           <a href="#" class="nav-link">Browse Jobs</a>
           <a href="#" class="nav-link">Resources</a>
-          <a href="../Login and authentification/login.html" class="btn-outline">Log In</a>
-          <a href="../Login and authentification/SIgn up.html" class="btn-primary-custom">Sign Up</a>
+          <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-3 mt-2 mt-lg-0">
+            <a href="../Login and authentification/login.html" class="btn-outline text-center m-0">Log In</a>
+            <a href="../Login and authentification/SIgn up.html" class="btn-primary-custom text-center">Sign Up</a>
+          </div>
         </div>
       </div>
     </div>
