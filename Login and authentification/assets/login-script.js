@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
       isValid = false;
     }
 
-    if (isValid) alert('Logged in (demo)');
+    if (isValid) {
+      window.location.href = '/Users/elijahagala/Desktop/campus gigs/onboarding/personal-info.html';
+    }
   });
 });
